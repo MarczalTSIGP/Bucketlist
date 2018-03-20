@@ -153,6 +153,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.4)
+      i18n (~> 0.7)
+      railties (~> 5.0)
     railties (5.1.5)
       actionpack (= 5.1.5)
       activesupport (= 5.1.5)
@@ -201,6 +204,9 @@ GEM
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
     shellany (0.0.1)
+    simple_form (3.5.1)
+      actionpack (> 4, < 5.2)
+      activemodel (> 4, < 5.2)
     simplecov (0.16.1)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -255,9 +261,11 @@ DEPENDENCIES
   pg (= 0.18.4)
   puma (~> 3.7)
   rails (~> 5.1.5)
+  rails-i18n (~> 5.0.0)
   rspec-rails (~> 3.7)
   sass-rails (~> 5.0)
   selenium-webdriver
+  simple_form
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)
