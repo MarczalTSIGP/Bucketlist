@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Contacts", type: :feature do
 
-  it "should send a message when all fields are filled correctly" do
+  it "should send a message when all fields are filled correctly", js: true do
     visit root_path
 
     fill_in 'contact_name', with: "Diego Marczal"
@@ -18,7 +18,7 @@ RSpec.feature "Contacts", type: :feature do
       text: 'Mensagem enviada com sucesso!')
   end
 
-  it "should not send a message when exists fields filled incorrectly" do
+  it "should not send a message when exists fields filled incorrectly", js: true do
     visit root_path
 
     fill_in 'contact_name', with: " "
@@ -33,15 +33,15 @@ RSpec.feature "Contacts", type: :feature do
       text: 'Existem dados incorretos!')
 
     within('div.contact_name') do
-      expect(page).to have_content("can't be blank")
+      expect(page).to have_content("não pode ficar em branco")
     end
 
     within('div.contact_email') do
-      expect(page).to have_content('is invalid')
+      expect(page).to have_content('não é válido')
     end
 
     within('div.contact_message') do
-      expect(page).to have_content("can't be blank")
+      expect(page).to have_content("não pode ficar em branco")
     end
   end
 

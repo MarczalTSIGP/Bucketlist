@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Contact, type: :model do
 
   before(:each) do
-    @contact = Contact.new(name: 'Diego Marczal', email: 'marczal@gmail.com', message: 'Olá')
+    @contact = create(:contact)
   end
 
   it 'should be valid' do
