@@ -10,8 +10,11 @@ gem 'turbolinks', '~> 5'
 gem 'pg', '0.18.4'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'simple_form'
+gem 'rails-i18n', '~> 5.0.0'
 
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
