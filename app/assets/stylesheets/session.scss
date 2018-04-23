@@ -1,0 +1,44 @@
+@import "bootstrap";
+@import "simple_form_bootstrap";
+
+/*************************************************************
+* HTML and body style
+**************************************************************/
+html, body {
+    height: 100%;
+    background: #fff;
+}
+
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13px;
+    color: #3e4855;
+    background-color: #fff;
+    line-height: 1.42857143;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+
+
+/*************************************************************
+* Vertical and horizontal align
+**************************************************************/
+
+.container {
+  height: 100%;
+}
+
+.vertical-centering {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-55%);
+  transform: translateY(-55%);
+}
+
+.horizontal-centering {
+  width: 350px;
+  margin: auto;
+}
