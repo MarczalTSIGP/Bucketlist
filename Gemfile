@@ -34,6 +34,7 @@ end
 group :test do
   gem 'simplecov', :require => false
   gem 'guard-rspec', require: false
+  gem 'database_cleaner', '1.6.0'
 end
 
 group :production do
