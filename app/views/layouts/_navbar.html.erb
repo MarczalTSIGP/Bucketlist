@@ -21,6 +21,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <%= link_to 'Meu perfil', edit_user_registration_path,
                                       class: 'dropdown-item' %>
+              <%= link_to 'Dashboard', users_root_path, class: 'dropdown-item' %>
               <%= link_to 'Sair', destroy_user_session_path, method: :delete,
                                 class: 'dropdown-item' %>
             </div>

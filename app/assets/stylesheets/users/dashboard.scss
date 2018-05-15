@@ -1,0 +1,16 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.bg-gray {
+  background-color: rgba(15, 15, 16, 0.49) !important;
+  a.nav-brand, li > a {
+    color: #FFF !important;
+  }
+}

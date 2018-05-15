@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'home#index'
 
-  resources :contacts, only: :create
+  devise_for :users
+  resources :contacts, only: [:create]
+
+  authenticate :user do
+    namespace :users do
+      root to: 'dashboard#index'
+    end
+  end
 end

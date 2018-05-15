@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
 
   protected
   def layout_by_resource
-    return "layouts/session" if devise_controller?
+    if devise_controller?
+      if resource_name == :user && ['edit', 'update'].include?(action_name)
+        return "users/layouts/application"
+      end
+      return "layouts/session"
+    end
 
     "layouts/application"
   end
