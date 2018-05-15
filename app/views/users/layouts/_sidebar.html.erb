@@ -1,0 +1,26 @@
+<ul class="nav nav-pills flex-column">
+  <% current_user.reload.lists.each do |list| %>
+    <li class="nav-item clearfix">
+      <%= link_to list.name, users_list_path(list), class: 'nav-link float-left' %> 
+      <%= link_to users_new_share_list_path(list), class: 'nav-link float-right' do %> 
+        <i class="fa fa-share" aria-hidden="true"></i>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<hr />
+
+<h6 class="text-center">Compartilhadas</h6>
+
+<ul class="nav nav-pills flex-column">
+  <% current_user.shared_lists.each do |list| %>
+    <li class="nav-item">
+      <%= link_to list.name, users_list_path(list), class: 'nav-link' %> 
+    </li>
+  <% end %>
+</ul>
+
+<div class='fixed-bottom'>
+  <%= link_to '+', new_users_list_path, class: 'btn btn-primary btn-lg col-sm-3 col-md-2' %>
+</div>

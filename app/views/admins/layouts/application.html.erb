@@ -18,19 +18,9 @@
 
     <%= render 'admins/layouts/navbar' %>
 
-    <div class="container-fluid">
-      <div class="row">
-
-        <div class="col-sm-3 col-md-2 sidebar">
-          <%= render 'users/layouts/sidebar' %>
-        </div>
-
-        <div class="col-sm-9 ml-sm-auto col-md-10">
-          <%= render 'shared/flash_messages' %>
-          <%= yield %>
-        </div>
-
-      </div>
+    <div class="container">
+      <%= render 'shared/flash_messages' %>
+      <%= yield %>
     </div>
 
   </body>

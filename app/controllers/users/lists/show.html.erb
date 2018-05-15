@@ -1,6 +1,0 @@
-<h1><%= @list.name %></h1>
-
-<%= simple_form_for(:task, url: '#', html: {class: 'form-inline'}) do |f| %>
-    <%= f.input :title, input_html: {class: 'col-md-12'}, wrapper_html: {class: 'col-md-10'}, label: false, placeholder: "Adicione uma tarefa em \"#{@list.name}\""  %>
-    <%= f.button :submit, "Enviar", class: 'btn btn-primary col-md-2' %>
-<% end %>

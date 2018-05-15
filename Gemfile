@@ -13,6 +13,8 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'devise', '4.4.3'
+gem 'jquery-ui-rails', '~> 6.0.1'
+gem 'font-awesome-sass', '~> 4.7.0'
 
 group :development, :test do
   gem 'factory_bot_rails'
@@ -20,6 +22,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'faker'
 end
 
 group :development do

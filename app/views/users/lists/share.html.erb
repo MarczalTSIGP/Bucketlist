@@ -1,0 +1,20 @@
+<h1 class='mt-sm-2'>Compartilhar lista <%= @list.name %></h1>
+
+<%= form_with(url: users_share_list_path, html: {class: 'form-inline'}) do |f| %>
+
+    <%= f.hidden_field :user_id, id: 'autocomplete_user_by_id' %>
+    <div class="form-group mr-sm-1">
+      <%= f.text_field :user_name, id: 'autocomplete_user_by_name', 'data-url' => users_autocomplete_search_path, class: 'form-control' %>
+    </div>
+    <%= f.submit "Enviar", class: 'btn btn-primary' %>
+<% end %>
+
+<br />
+
+<h3>Compartilhado com</h3>
+
+<ul>
+  <% @list.shared_users.each do |u|%>
+    <li><%= "#{u.name} <#{u.email}>" %> </li>
+  <% end %>
+</ul>

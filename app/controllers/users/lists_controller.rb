@@ -17,7 +17,23 @@ class Users::ListsController < Users::BaseController
   end
 
   def show
+    @list = current_user.lists.find_by(id: params[:id]) ||
+            current_user.shared_lists.find(params[:id])
+
+    @tasks_completed = @list.tasks.completed
+    @tasks_uncompleted = @list.tasks.uncompleted
+  end
+
+  def share
     @list = current_user.lists.find(params[:id])
+  end
+
+  def share_with
+    @user = User.find(params[:user_id])
+    @list = current_user.lists.find(params[:id])
+
+    @list.shared_users << @user
+    redirect_to users_share_list_path(@list)
   end
 
   private
