@@ -18,3 +18,6 @@ Rails.application.config.assets.precompile += %w( session.js )
 
 Rails.application.config.assets.precompile += %w( users/application.scss )
 Rails.application.config.assets.precompile += %w( users/application.js )
+
+Rails.application.config.assets.precompile += %w( admins/application.scss )
+Rails.application.config.assets.precompile += %w( admins/application.js )

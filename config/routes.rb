@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   root to: 'home#index'
 
   devise_for :users
@@ -6,6 +7,12 @@ Rails.application.routes.draw do
 
   authenticate :user do
     namespace :users do
+      root to: 'dashboard#index'
+    end
+  end
+
+  authenticate :admin do
+    namespace :admins do
       root to: 'dashboard#index'
     end
   end
