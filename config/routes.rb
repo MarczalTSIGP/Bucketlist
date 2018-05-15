@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   authenticate :user do
     namespace :users do
       root to: 'dashboard#index'
+      resources :lists, except: :index
     end
   end
 
