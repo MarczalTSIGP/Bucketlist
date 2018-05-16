@@ -30,9 +30,15 @@ class Users::ListsController < Users::BaseController
 
   def share_with
     @user = User.find(params[:user_id])
-    @list = current_user.lists.find(params[:id])
 
+    @list = current_user.lists.find(params[:id])
     @list.shared_users << @user
+
+    if (@list.shared_users.exists?(id: @user.id))
+      flash[:error] = 'Lista ja compartilhada com o contato ' + @user.name
+    else
+      @list.shared_users << @user
+    end
     redirect_to users_share_list_path(@list)
   end
 

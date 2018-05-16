@@ -1,30 +1,32 @@
-<h1><%= @list.name %></h1>
+<div id="list-show" data-list-id="<%= @list.id %>">
+  <h1><%= @list.name %></h1>
 
-<%= simple_form_for(:task, url: users_list_tasks_path(@list), html: {class: 'form-inline'}) do |f| %>
+  <%= simple_form_for(:task, url: users_list_tasks_path(@list), html: {class: 'form-inline'}) do |f| %>
     <%= f.input :title, input_html: {class: 'col-md-12'}, wrapper_html: {class: 'col-md-10'}, label: false, placeholder: "Adicione uma tarefa em \"#{@list.name}\""  %>
     <%= f.button :submit, "Enviar", class: 'btn btn-primary col-md-2' %>
-<% end %>
+  <% end %>
 
-<br>
-<hr>
-<br>
+  <br>
+  <hr>
+  <br>
 
-<div class="row">
+  <div class="row">
     <div class="col-md-6">
-        <h3>Tarefas pendentes</h3>
+      <h3>Tarefas pendentes</h3>
 
-        <ul id="tasks_uncompleted" class="list-group">
-          <%= render @tasks_uncompleted, url: :users_list_mark_task_as_completed_path  %>
-        </ul>
+      <ul id="tasks_uncompleted" class="list-group">
+        <%= render @tasks_uncompleted, url: :users_list_mark_task_as_completed_path  %>
+      </ul>
     </div>
 
 
     <div class="col-md-6">
 
-        <h3>Tarefas concluídas</h3>
+      <h3>Tarefas concluídas</h3>
 
-        <ul id="tasks_completed" class="list-group">
-          <%= render @tasks_completed, url: :users_list_mark_task_as_uncompleted_path %>
-        </ul>
+      <ul id="tasks_completed" class="list-group">
+        <%= render @tasks_completed, url: :users_list_mark_task_as_uncompleted_path %>
+      </ul>
     </div>
+  </div>
 </div>

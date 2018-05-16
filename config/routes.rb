@@ -27,4 +27,6 @@ Rails.application.routes.draw do
       root to: 'dashboard#index'
     end
   end
+  
+  mount ActionCable.server, at: '/cable'
 end
